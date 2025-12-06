@@ -21,49 +21,56 @@ public class PizzaApp{
 		double price = 0;
 		double division = 0;
 	
-		if(pizzaType.equalsIgnoreCase("Sapa Size")){
+		if(guests >= 0){
 
-			numberOfSlices = 4;
-			pricePerBox = 2000;
+			if(pizzaType.equalsIgnoreCase("Sapa Size")){
 
-			boxesOfPizza = Math.round(guests / numberOfSlices);
-			slicesLeftover = numberOfSlices - guests % numberOfSlices;
-			price = pricePerBox * boxesOfPizza;
+				numberOfSlices = 4;
+				pricePerBox = 2000;
 
-		}else if(pizzaType.equalsIgnoreCase("Small Money")){
+				boxesOfPizza = Math.round(guests / numberOfSlices);
+				slicesLeftover = numberOfSlices - guests % numberOfSlices;
+				price = pricePerBox * boxesOfPizza;
 
-			numberOfSlices = 6;
-			pricePerBox = 2400;
+			}else if(pizzaType.equalsIgnoreCase("Small Money")){
 
-			boxesOfPizza = Math.round(guests / numberOfSlices);
-			slicesLeftover = numberOfSlices - guests % numberOfSlices;
-			price = pricePerBox * boxesOfPizza;
+				numberOfSlices = 6;
+				pricePerBox = 2400;
 
-		}else if(pizzaType.equalsIgnoreCase("Big Boys")){
+				boxesOfPizza = Math.round(guests / numberOfSlices);
+				slicesLeftover = numberOfSlices - guests % numberOfSlices;
+				price = pricePerBox * boxesOfPizza;
 
-			numberOfSlices = 8;
-			pricePerBox = 3000;
+			}else if(pizzaType.equalsIgnoreCase("Big Boys")){
 
-			boxesOfPizza = Math.round(guests / numberOfSlices);
-			slicesLeftover = numberOfSlices - guests % numberOfSlices;
-			price = pricePerBox * boxesOfPizza;
+				numberOfSlices = 8;
+				pricePerBox = 3000;
 
-		}else if(pizzaType.equalsIgnoreCase("Odogwu")){
+				boxesOfPizza = Math.round(guests / numberOfSlices);
+				slicesLeftover = numberOfSlices - guests % numberOfSlices;
+				price = pricePerBox * boxesOfPizza;
 
-			numberOfSlices = 12;
-			pricePerBox = 4200;
+			}else if(pizzaType.equalsIgnoreCase("Odogwu")){
 
-			division = guests / numberOfSlices;
-			boxesOfPizza = Math.ceil(division);
-			slicesLeftover = numberOfSlices - guests % numberOfSlices;
-			price = pricePerBox * boxesOfPizza;
+				numberOfSlices = 12;
+				pricePerBox = 4200;
+
+				division = guests / numberOfSlices;
+				boxesOfPizza = Math.ceil(division);
+				slicesLeftover = numberOfSlices - guests % numberOfSlices;
+				price = pricePerBox * boxesOfPizza;
+
+			}else{
+
+				System.out.println("Invalid Pizza Type Oga");
+
+			}
 
 		}else{
 
-			System.out.println("Invalid Pizza Type Oga");
+			System.out.println("Why are you putting a negative number?");
 
 		}
-
 
 		System.out.println("Number of boxes of pizza to buy = " + boxesOfPizza);
 		System.out.println("Number of left over slices after serving = " + slicesLeftover);
